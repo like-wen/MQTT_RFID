@@ -12,7 +12,9 @@ public class ServiceMQTT {
     private MqttClient client;
     private MqttTopic mqttTopic;
     private MqttConnectOptions options;
+
     private String user = "admin";
+
     private String password = "public";
 
     private MqttMessage message;
@@ -40,13 +42,10 @@ public class ServiceMQTT {
 
     public void publish(boolean b)  {
         try {
-
             String str = "{\"barrierGate\":"+b+",\"id\":0}";
-
             System.out.println("发送的json为"+str);
             message = new MqttMessage();
-        message.setPayload(str.getBytes());
-
+            message.setPayload(str.getBytes());
             mqttTopic.publish(message);
         } catch (Exception e) {
             throw new RuntimeException(e);

@@ -1,5 +1,6 @@
 package org.lkw;
 
+//门
 public class barrierGate {
     private boolean barrierGate;
     private int id;
