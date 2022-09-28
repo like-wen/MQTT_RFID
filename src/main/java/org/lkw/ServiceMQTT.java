@@ -1,12 +1,10 @@
 package org.lkw;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
 public class ServiceMQTT {
 
-    public static final String HOST = "tcp://localhost:1883";
+    public static final String HOST = "tcp://192.168.199.132:1883";
     private String ServiceID = "ServiceFirst";
     private String topic="APP2AIOTSIM";
     private MqttClient client;
@@ -19,7 +17,7 @@ public class ServiceMQTT {
 
     private MqttMessage message;
 
-    public ServiceMQTT(SerialAssistant serialAssistant) {
+    public ServiceMQTT(RFIDGUI serialAssistant) {
         //创建对象
         try {
             client = new MqttClient(HOST,ServiceID,new MemoryPersistence());

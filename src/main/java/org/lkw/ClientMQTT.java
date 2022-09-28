@@ -7,7 +7,7 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
 public class ClientMQTT {
 
-    public static final String HOST = "tcp://localhost:1883";
+    public static final String HOST = "tcp://192.168.199.132:1883";
     private static final String clientID = "clientFirst";
     private String[] TOPICs={"AIOTSIM2APP"};
     private MqttClient client;
@@ -16,7 +16,7 @@ public class ClientMQTT {
     private String password = "public";
 
 
-    public void clientStart(SerialAssistant serialAssistant){
+    public void clientStart(RFIDGUI serialAssistant){
         try {
             client = new MqttClient(HOST,clientID,new MemoryPersistence());
             options = new MqttConnectOptions();

@@ -21,7 +21,6 @@ public class DBHelper {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
     }
     public void close(){
         try{
